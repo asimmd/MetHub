@@ -50,8 +50,9 @@ public class BaseClass {
 	@BeforeClass(groups={"smoke","Regression"})
 	public void bc() throws IOException {
 		
-		
-		String browser = fu.getPropertyKeyValue("Browser");
+		System.out.println("Enter the browser");
+     	String browser = fu.getPropertyKeyValue("Browser");
+		//String browser = System.getProperty("Browser");
 		
 		if(browser.equalsIgnoreCase("chrome")) {
 			

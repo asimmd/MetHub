@@ -4,6 +4,7 @@
   <artifactId>MetHub</artifactId>
   <version>V2.4</version>
    <properties>
+   
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
@@ -57,7 +58,7 @@
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>7.4.0</version>
-    <scope>test</scope>
+   
     
 </dependency>
 <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
@@ -69,6 +70,22 @@
 
 
 </dependencies>
+<build>
+		<plugins>
+			<!-- Below plug-in is used to execute tests -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.18.1</version>
+				<configuration>
+					<suiteXmlFiles>
+						<!-- TestNG suite XML files -->
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
   
 </project>
